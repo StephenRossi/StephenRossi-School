@@ -1,0 +1,461 @@
+Statistics 11C
+	10/5/16
+		Average
+			measures of central tendency include
+				mean
+					sum of all values divided by the total # of them
+				median
+				mode
+				midrange
+		Statistic - a characteristic or measure obtained by using the data values from a sample
+		Parameter - a characteristic or measure obtained by using all the data values from a specific population
+			
+			A (CLASS) |  B (FREQUENCY f) | C (MIDPOINT x) | D (f*x)
+			5.5 - 10.5         1                  8       ->     8
+			10.5 - 15.5        2                  13      ->     26
+			15.5 - 20.5        3                  18      ->     54
+			20.5 - 25.5        5                  23      ->     115
+			ECT...
+			
+			kinda means: 
+			8, 13, 13, 18, 18, 18, 23, 23, 23, 23, 23, ect.
+	10/26/16
+		HW. Please write a conclution to t this standart deviatopm and the spread
+		
+	10/27/16
+		Overview
+			First- data sets
+				Counted occurences and organized them (class, freqency, percent)
+					terms: Class, 
+					Class Boundry, =/- .5
+					class limits, no overlap, equal sizs, mutally exclusive 
+					Frequency,  
+					Cumulative Frequency, 
+					class width, diff between class limits
+					class midpoint, lower + upper limit /2
+				Graphing:
+					Histogram: x axis: class boundaries
+							   y axis: freqency
+							   
+					Ogive: x class boundaries
+					       y cumalative freqency
+				Lable the graph with a title, and what the x and y axis are.
+				
+			Next: 
+				Mean: 
+					sum of the data points and divide by the # of points
+	11/15/16
+	
+		Z-Score or Standard score
+			Represents the number of standard deviations that a data value falls above or below the mean
+	
+					        value-mean
+					z= -------------------
+					    Standard Deviation
+						
+					percentile= number below x
+					
+	12/6/16
+		Fundamental Counting Rule	
+			Fliping a coin
+				2 posibilities 
+			rolling a die
+				6 posibilities
+				
+			2x6= total number of poible outcomes
+			
+		Permutations-	ORDER MATTERS
+			(a,b,c) -> abc | bac | cba
+					   acb | bca | cab
+			
+		Combinations- ORDER DOES NOT MATTER
+		
+		12/12/16
+		nCr = n!/(c-r)!r!
+		
+		nPr = n!/(n-r)!
+		
+		Factorial- x!: 
+			ex.
+				5! = 5(5-1)(5-2)(5-3)(5-4)
+		
+		12/13/16
+			Dice
+				Strength in numbers
+			Notes	
+				Mult Rules
+					mult rules can be used to find the probability of two or more events that occur in sequence
+					The two events hare independant events (die roll and coin flip)
+					The outcome of the two do not effect each other
+						"if the fact that A occures does not affect the probability of b occuruing"
+						When independant, probability of both occuring is 
+							P(A and B) = P(A) * P(B) 
+					When the outcome or occurence of the first even affects the outome of the occurnce of the second even in a way that the probability is changed
+						ex: 
+							drawing a card from a deck, not replacing it, and then drawing a second card
+						when dependant, the porability of both occuring is 
+							P(A and B)= P(A) * P(B|A) 
+							
+								 P(B|A) 
+									Has nothing to do with division
+									It means: The prob that even b occurs GIVEN that event A already happened
+							 
+		12/20/17
+			Treee diagrams
+			compliment
+			probability simple and compound events
+			independant events
+			dependant events
+			factorials
+			outcome
+			sample space
+			event
+			equally likely events
+			probability experiment
+			           _
+			compliment E
+			prob- simple and compound 
+			mutually exlusive
+			permutations
+			combinations
+			a few word problems
+		
+		formula for idfk
+			
+			
+		Test: 
+			1-5             1 point each
+			6a,6b           1 point each
+			7a,7b           1 point each
+			8               1 point
+			9 a-f           1 point for each (8 points)
+			10-12           1 point each
+			13- 22          1 point each
+			23 a-d          2 points each
+			24              3 points
+			25              3 points
+			extra credit    +,2 points
+				
+		python anywhere
+			bash=linux
+				ls --help
+				ls -l      (ls -    signnifies details)
+				date   displays datef
+		1/19/17
+			Distribution: 
+				A set of data points 
+		1/24/17
+			The Differences between the following:
+				The mean- Sum of the products of outcomes and probability
+					1 * 1/6 + 2* 1/6 ect.   Mean of rolling a die is 3.5
+				Variance
+					sum of the square of the success 
+					
+					
+		revolver
+			1 bull
+			
+			
+		5/6   4/5   3/4  2/3 = no bullet.
+		
+		
+		10/14  9/13 8/12 
+		
+		1/26/17
+			To know for ch. 5:
+				Distributions:
+					Frequency
+					Probability
+					Binomial
+					Munltinomial
+				Probability
+					prob
+					Binomial
+					Multinomial
+				F(x)
+					Mean
+					Variance
+					SD
+				
+					
+				
+			
+			PRACTICE
+				Multinomial Distribution: 
+				
+												x     x         x                 __________________________
+							               n!              1     2         k  	 /**                      **\
+							p(x)= -------------------- * p   * P   ... * P    	 \**  Multinomal EQUATION **/
+							       x ! * x ! * x ! ...          2         k   	  \________________________/
+								    1     2     3
+									
+							k = final value
+					EX 1.  Firearms Laws
+						54% more strict
+						11% less strict
+						1% no opinion
+						34% keep the same
+							4>2, so it would be multinomial
+							
+							 x  | 4 | 3 | 2 | 1 |
+							--- |----------------
+ 							p(x)|.54|.11|.34|.01|
+
+							
+					
+				Binomial Distribution:
+												                           ________________________
+							                  n!       x    (n-x)         /**                    **\
+							p(scenario)=  ---------- * P  * Q             \**  BINOMIAL EQUATION **/
+						                   (n-x)!x!                        \______________________/
+							
+							
+				m= E(x-p(x))
+				E= sum off all p(x)
+			Probability of at least 3 times :( if 10 trials )
+					p(3)+P(4)+P(5)....    P(10) 
+					
+				P(More than 8) = P(9) + P(10)
+				
+		2/3/17
+			Statistic:
+				Ways of looking at data mathamaticaly and scientifically
+			Descriptive stats:
+				descripe whats going on in a certain population
+			Inferential stats: 
+				Making predictions for diferent populations 
+					ex. high school kids in america from a test on our school
+					how people may vote in the future
+			variable: characteristic or attribute that can assume different values
+				Qualitative - descrive
+				Quanitative - numbers
+					Discrete - indiviudeal and set (cups of coffee)
+					Continuous - values that can flow into another value (time)
+			Population: subjects(of any kind) that are being studdied
+			sample: group of subjects selected from a population
+			Levels of measurement
+				Nominal - non numeric
+					Names
+				Ordinal   - non numeric
+					Names With ranking (high, higher, highest)
+				Interval -numeric
+					Has no zero
+				Ratio
+					Has a zero
+			Random
+				Pick stuff outa hat
+			systematic
+				Every (3rd) person (a formula)
+			stratified
+				group them, then pick randomly from a group
+			cluster
+				make grouos then use formula for every so often
+			Confounding Variable :
+				one that influences te dependant outcome or outcome variable  but was not seperated from the indpendant variable
+				
+			Histogram:
+			freqency polygons
+			Ogives (cumalative)
+			
+			Mean 
+			Median
+			Mode 
+			Midrange
+			
+			Z-Score- How many standard deviations it is above or below the mean (xfuncion + or - the mean of the graph)
+			percentiles	-position in hundeds that a data value holds in the distribution
+			Quartiles-poitions in fourths
+			Deciles-position in tenths
+			
+			Outlier is an extremely high or low var. WAY OUT OF THE WAY
+			
+			probability experiment is a chance process that leads to well-defined results called outcomes.
+			outcome is the result of a single trial
+			sample spae is the set of all possible outcomes of a porability experiment
+			
+			Events: consists of a set of outcomes of a probability experiment
+			
+			probability rule 1: 
+				The prob of any even has to be between 0 and 1
+			rule 2:
+				If an event cannot occur, its probability is zero(0)
+			rule 3: 
+				if an event is certain, its probability is one(1)
+				
+			For at least one:
+				1 - the probaity of failure
+				
+			Counting Rule: 
+				
+				
+			independant:
+				P(A and B) = P(A) * P(B)
+			Dependant 
+				P(a and b) = P(A) * P(A|B)
+				
+			Counting Rules:
+				Fundemetal rule: the sequence of n events in which the first one has k1 possibilities, the second even has k2, and so forth. The total number of possibilities 
+				will be  k1 * k2 * k3 ....  Kn
+				
+				flip a coin, then roll a die, and roll another die
+						2 * 6 * 6 = 72
+			Permutations- oder matters
+						    n!
+					P = ---------
+				   n r 	 (n-r)!
+				**EXAMPLE:    
+			5 balls diff numbers- take 3 out at a time (all the different ways you can pick out 3 and oder matters)
+				(1) (2) (3) (4) (5)
+			
+			n=5
+			r=3                5!         5*4*3*2!
+					 P  =  -------  ->   ---------    -> 5*4*3
+					5 3		   2!			2!
+					
+			Combinations- Order doesnt matter
+				The number of cominations of r objects selected from n objects is denoted by nCr and is given by the formula
+				
+						n!
+				C = -------------
+			   n r    (n-r)!r!
+			  EXAMPLE**
+						5!               5*4*3!            5*4! 
+				C = -----------   ->  ----------   ->  ----------  -> 5*2! = 10
+			   5 3    (5-3)!3!           3!2!				2!
+			   
+			   Note- less than permutations
+			   
+		Rules of prob distribution
+				1. the sum of the the probabilities of events in the sample must equal 1
+				
+		central tendency
+				Formula for the mean of probability Distribution
+					u=X  * P(x ) X * P(x ) ...... Xn * P(Xn)
+					   1      1   2     2 
+					   
+					 where x1 are the outcomes and px are the corresponding probabilities
+		Variance
+			Ammount the data points are spread out
+				 2     2            2
+				o = E[X  * P(X)] - u
+				
+				the standard deviations is 
+					      ____
+					o=  \/ 
+					
+		Expected Value: 
+			ofa  descrete random variable of a probability distribution is the theoretical average of the variable. The formula is
+				u = E(X) = EX * P(X)
+			the symbol E(X) is used for expected value
+		
+		Binomial Distributions
+			Variable you are measuring only has two possiblities. Win or Lose. Heads or Tails.
+			  n!          n-x    x
+			---------- * p    * q
+			 n-x! x!
+			 
+		Fundamental Counting Rule 
+				The total number of posibilities will be :
+					k * k * k * k  ... *k
+					 1   2   3   4       n
+					 
+	2/15/17
+		Term 2 Project:
+				Pick a random page5 times
+				1.
+					I chose page 350.     *H*
+						There are 53 words
+						I knew 20
+							adj. 5
+							noun. 35
+							verb. 7
+				2.
+					I chose page 631.		*R*
+						There are 42 words
+						I knew 21
+							adj. 12
+							noun. 25
+							verb. 9 
+				3.			
+					I chose page 872		*W*
+						There are 50 words
+						I knew 38
+							adj. 
+							noun. 
+							verb.
+				8.		
+					I chose page 173.	*C*
+						There are 56 words
+						I knew 29
+							adj. 11
+							noun. 30
+							verb. 12
+				4.			
+					I chose page 682		*S*
+						There are 42 words
+						I knew 30
+							adj. 7 
+							noun. 21
+							verb. 6
+				5.
+					Page 260		*E*
+						There are 44 words
+						I knew 29
+							adj 9
+							noun 24
+							verb 6
+				6.
+					Page 230		*E*
+						There are 48 words
+						I knew 36
+							adj 6
+							noun 23
+							verb 13
+				7.
+					Page 248		*E*
+						There are 48 words
+						I knew 30
+							adj 6
+							noun 24
+							verb 13
+				9.	Page 618        *R*
+						There are 46 words
+						I knew 26
+							adj. 5
+							noun 35
+							verb 8 
+					
+					
+					
+				10. Page 641        *R*
+						There are 46 words
+						I knew 19
+							adj. 6
+							noun. 27 
+							verb 13
+				
+				11. Page 33         *A*
+						There are 55 words
+						I knew 33
+							adj 8 
+							noun 33
+							verb 1
+	2/7/17	
+		
+		
+		
+		
+	4/27/17
+		Peirson index = how far the curve is leaning or skewed
+		        _
+		      3(X - Median)
+		PI = ---------------
+		            sd
+					
+					
+		_
+		X = Mean of population
+		
+		sd = standard deviations
+		
+		

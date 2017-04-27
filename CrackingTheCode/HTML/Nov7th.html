@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        November 7th Specs
+    </title>
+</head>
+    <style>
+    body {
+        background-color: magenta;
+        color: red;
+        font-family: Verdana;
+        font-size: 28px;
+    }
+    p {
+        margin-top: 50px;
+
+    }
+    #loozr {
+        margin-top: 100px;
+        height: 400px;
+        width: 850px;
+        border: 1px dashed black;
+        border-radius: 20px;
+    }
+    </style>
+    <body>
+    <center>
+    <div id="loozr">
+        <p> Big box here, cause why not right?
+        <p></p>
+        <button id="myButton" onclick="function go(x)"> What is X? </button>
+        </p>
+    </div>
+    </center>
+
+            <script type="text/javascript">
+                var x= 7;
+                console.log("One: " + x);
+                
+                function go(x) {
+                x= 17;
+                }
+                console.log("Two: " + x);
+                go(x);
+                console.log("Three: " + x);
+
+            </script>
+    </body>
+</html>

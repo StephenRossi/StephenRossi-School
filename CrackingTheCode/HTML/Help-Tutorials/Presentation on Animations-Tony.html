@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>
+      ANIMATIONS
+    </title>
+    <h1>ANIMATIONS</h1>
+  </head>
+  <body>
+
+<pre>
+    <h2>What are CSS3 Animations?</h2>
+    An animation lets an element gradually change from one style to another.
+    But to have an animation you need <i><b>keyframes</i></b>.
+<h2>The @keyframes Rule</h2>
+When you specify CSS styles inside the @keyframes rule,
+the animation will gradually change from the current style to the new style at certain times.
+
+To get an animation to work, you must bind the animation to an element.
+
+  The following example binds the "example" animation to the div element.
+The animation will last for 4 seconds,
+and it will gradually change the background-color of the div element from "red" to "blue".
+
+
+  // The animation code //
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+// The element to apply the animation to //
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+  If the animation-duration property isn't specified, then the animation will have no affect
+Because the default value is 0.
+By using the keywords "from" and "to" they represent a progress bar as "from" is 0% and "to" is 100%.
+
+You can also change the position while its going through its stages.
+An example of this is below
+
+You can also set a delay to the animation by adding animation-delay
+
+So......
+div {
+  animation-delay: 2s;
+}
+
+Another property you can add is the animation-interation-count property
+This specifies the number of times an animation should run.
+So......
+div {
+  animation-iteration-count 4;
+}
+
+<h3>Example</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You can also reverse the direction and alternate cycles
+To do this you need to add reverse or alternate in the <i>animation-direction</i> property.
+So.....
+div {
+  animation-direction: reverse
+  animation-direction: alternate
+}
+
+<h2> animation-timing-function </h2>
+The animation-timing-function property specifies the speed curve of the animation.
+
+The animation-timing-function property can have the following values:
+
+ease - specifies an animation with a slow start, then fast, then end slowly (this is default)
+linear - specifies an animation with the same speed from start to end
+ease-in - specifies an animation with a slow start
+ease-out - specifies an animation with a slow end
+ease-in-out - specifies an animation with a slow start and end
+
+
+
+        <style>
+          .code {
+            position:absolute;
+            left:500px;
+            top:450px;
+          }
+          #code1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example;
+            animation-duration: 5s;
+          }
+          #code2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example2;
+            animation-duration: 4s;
+          }
+          #code3 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            animation-name: example3;
+            animation-duration: 4s;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+            animation-timing-function: ease-out;
+            }
+          @keyframes example {
+            from {background-color: red;}
+            to {background-color: yellow;}
+          }
+          @keyframes example2 {
+            0% {backround-color:red; left:650px; top:700px;}
+            25%  {background-color: yellow; left:850px; top:700px;}
+            50%  {background-color: blue; left:850px; top:900px;}
+            75%  {background-color: green; left:650px; top:900px;}
+            to {background-color: red; left:650px; top:700px;}
+
+          }
+          @keyframes example3 {
+            0% {backround-color:red; left:50px; top:1000px;}
+            25%  {background-color: yellow; left:250px; top:1000px;}
+            50%  {background-color: blue; left:250px; top:1200px;}
+            75%  {background-color: green; left:50px; top:1200px;}
+            100% {background-color: red; left:50px; top:1000px;}
+          }
+        </style>
+      </pre>
+      <div id = "code2" class = "code"></div>
+      <div id = "code1" class = "code"></div>
+      <div id = "code3" class = "code"></div>
+  </body>
+</html>

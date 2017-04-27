@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="fighter.png">
+	<meta http-equiv="Content-Type" content="text/html;">
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Revalia|Press+Start+2P" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<title> </title>
+</head>
+<style type="text/css">
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, section, summary,
+	time, mark, audio, video {
+  		margin: 0;
+  		padding: 0;
+  		border: 0;
+  		font: inherit;
+  		font-size: 100%;
+  		vertical-align: baseline;
+	}
+	body {
+		background: url("abbyBKG.jpg");
+		background-size: cover;
+	}
+	#startButton {
+		height: 120px;
+		width: 210px;
+		 /* background: url("startButZero.png"); */
+		margin: 40vh 42vw;
+	}
+	#header {
+		position: absolute;
+		height: 4vh;
+		width: 24vw;
+		text-decoration: none;
+		top:3vh;
+		text-align: center;
+		left: 38vw;
+		font-family: 'Press Start 2P', cursive;
+		font-size: 4.5vh;
+		background-color: rgba(128, 128, 128,.9);
+	}
+	#header span {
+		background-color: rgba(128, 128, 128,.9);
+	}
+	#startButImage {
+		display: none;
+	}
+	.figs {
+		background: url("fighter.png");
+		background-size: cover;
+		height: 120px;
+		width: 100px;
+		position: absolute;
+	}
+	.figs:hover {
+		cursor: crosshair;
+	}
+	#figArena {
+		height: 70vh;
+		width: 70vw;
+		background-color: rgba(128, 128, 128,.5);
+		position: absolute;
+		left: 15vw;
+		top: 15vh;
+		z-index: -2;
+		border: 10px solid black;
+		border-radius: 5px;
+	}
+	#howToPlay{
+		font-family: 'Revalia', cursive;
+		position: absolute;
+		left: 20vw;
+		top: 90vh;
+		width: 60vw;
+		text-align: center;
+		background-color: rgba(128, 128, 128,.8);
+	}
+	#round {
+		font-family: 'Press Start 2P', cursive;
+		position: absolute;
+		left: 70vw;
+		top: 12vh;
+		background-color: rgba(128, 128, 128,.8);
+	}
+	#time {
+		font-family: 'Press Start 2P', cursive;
+		position: absolute;
+		left: 20vw;
+		top: 12vh;
+		background-color: rgba(128, 128, 128,.8);
+	}
+</style>
+	<body>
+		<div id="header"> Get rid of<span style="text-decoration: underline;"> the figs! </span></div>
+		<img id="startButton" src="startTemplate.png" onclick="startGame()"/>
+		<div id="round">Round: 0/8 </div>
+		<div id="time">Time: 20s </div>
+		<div id="score"> </div>
+		<div id="figArena"></div>
+		<div id="howToPlay"><span style="text-decoration: underline; color: red;"> How to play:</span> Click the figs as fast as you can and procede through all stages without letting the time run out!</div>
+	</body>
+<script>
+	var startImages = []
+	var figCount = 0;
+	var timer = 0;
+	var start = false;
+	var score = 0;
+	var round = 0;
+	var max = 78;
+	var min = 18;
+
+
+	function popFig(id) {													 // This is where on mouseover or onclick of a fig you will pop the fig and it will be removed from play
+		x = document.getElementById(id);
+		x.parentNode.removeChild(x);
+		figCount--
+		if (figCount === 0){
+			nextRound();
+		}
+	}
+	function spawnFig(figSpawns) {                                                             // spawns the figs in radnom locations on the 
+		while (figSpawns > 0) {
+			var newFig = document.createElement('div');
+			var arena = document.getElementById('figArena')
+			//var t = document.createTextNode("I IZ A FIG");   
+			newFig.setAttribute("class", "figs");
+			newFig.setAttribute("id", "fig"+figCount);
+			var randomLeft = Math.floor(Math.random() * (max - min + 1)) + min;
+            var randomTop = Math.floor(Math.random() * (max - min + 1)) + min;
+            console.log("Left: " + randomLeft + "    " + "Top: " + randomTop);
+			newFig.style.left = randomLeft +"%";        //Insert Random number from 25 to 75
+			newFig.style.top =  randomTop + "%";      //Insert Random number from 25-75
+			newFig.setAttribute("onclick", "popFig(this.id)");
+			//newFig.appendChild(t); 
+			arena.appendChild(newFig);
+			figCount++;
+			figSpawns--;
+		}
+	}
+	function addFigsRandomly(round) {                                                // Finds the number of figs to spawn   Math.floor(roundNumber x 1.5 + 4) 
+		console.log(Math.floor(round * 1.5 + 4) +" figs are going to be spawned")
+		console.log(start);
+		figSpawns = Math.floor(round * 1.5 + 4)
+		console.log(figSpawns)
+		spawnFig(figSpawns)
+	}
+	function startGame() {                                                           // Starts The Game. This is called on click of start button
+    	round++;
+    	start = true;
+    	document.getElementById("startButton").style.display = "none";
+    	document.getElementById("howToPlay").style.display = "none";
+    	nextRound();
+	}
+	function nextRound() {                                                           // After each round end next round is called to determine the round # and how many figs to add
+		if (round === 1) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 2) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 3) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 4) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 5) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 6) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 7) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round === 8) {
+			alert("Round " + round + " is starting...");
+			console.log("Round " + round + " is starting...");
+			addFigsRandomly(round);
+			document.getElementById("round").innerHTML = "Round: "+round+"/8";
+			round ++;
+		}
+		else if (round > 8) {
+			gameWin();
+		}
+		else {                                      // You should never get this error, if you do something is wrong
+			alert("error!");
+			console.log("error!");
+		}
+	}
+	function gameOver() {                           // Ends game and resets all variables
+		figCount = 0;
+		timer = 0;
+		start = false;
+		score = 0;
+		round = 0;
+		scoring();
+	}
+	function scoring() {
+
+	}
+	function startTimer() {
+
+	}
+	function stopTimer() {
+
+	}
+</script>
+</html>	

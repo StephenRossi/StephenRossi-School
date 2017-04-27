@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;">
+  	<meta http-equiv="Content-Language" content="en-us">
+ 	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<title>Problem Set Calculator</title>
+</head> 
+<style type="text/css">
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+	#container {
+		border: 1px solid black;
+		height: 60px;
+		width: 240px;
+		overflow: auto;
+		background-color: #f7f7f7;
+		border-radius: 10px;
+		text-align: center;
+		margin-top: 10px;
+		margin-left: 50%, -120px;
+	}
+	#container span {
+		text-decoration: underline;
+	}
+</style>
+<body>
+	<div id="header"> Statistics Problem Set Calculator</div>
+	<form>
+		<input  id="input" name=“favoriteNumber” type=“text” placeholder= "Next Value In Problem Set <">
+		<input type=button onclick="addToArray()" value="Add Number"/>
+		<input type=button id="resetArray" onclick="resetDaArray()" value="Clear Entire Set"/>
+		<input type=button onclick="removeLast()" value="Remove Last Value"/>
+	</form>
+	<div id="container">
+		<div> 
+			<span>Current Problem Set:</span>
+		</div>
+			<div id="box"></div>
+	</div>
+	<button onclick="doMathBoiz()">Give me the math! </button>
+	<div id="theMath"> </div>
+</body>
+<script type="text/javascript">
+	var number = [];
+
+   function addToArray(){
+   		var x = document.getElementById("box");
+     	number.push(document.getElementById("input").value);
+     	x.innerHTML = number.join(', '); 
+   }
+
+   function resetDaArray(){
+   		var x = document.getElementById("box");
+    	number = [];
+    	x.innerHTML =(number);
+    	return number;
+    }
+
+    function removeLast(){
+    	var x = document.getElementById("box");
+    	number.pop()
+     	x.innerHTML =(number); 
+     	return number
+    }
+    function getSum() {
+      var array = number;
+      var sum = 0;
+      for(var i in array){ 
+        sum += array[i]; 
+      }
+    console.log(sum)
+    }
+    function doMathBoiz(){
+      getSum();
+      getMean();
+      //getMode();
+      //getMedian();
+      //getVariance();
+      //getStandardDev();
+    }
+    function getMean(){
+      y = number.length;
+      sum = number.reduce(getSum);
+      mean = sum/y
+      console.log("hey its", mean)
+    }
+ 	//$(document).ready(function(){
+    //$("#resetArray").click(function(){
+    //    $("#box").empty();
+    //});
+//});
+ 	//var that = 5+20
+	//document.getElementById("demo").innerHTML =(that);
+ 	//var array6 = [1,2,3,4,5,6,7];
+    //array6.pop();
+    //alert(array6);
+</script>
+</html>

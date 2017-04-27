@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Z-Score</title>
+</head>
+	<style type="text/css">
+		#form {
+			margin-top: 60px;
+			position: fixed;
+			margin-left:25%;
+		}
+	</style>
+<body>
+		<form id="form" oninput="x.value=parseInt(a.value)-parseInt(b.value)/parseInt(c.value)">
+			<input type="box" id="a" placeholder="Value Here">-
+			<input type="box" id="b" placeholder="Mean Here">/
+			<input type="box" id="c" placeholder="Standard Deviation Here">=
+
+			<output type="box" name="x" id="x" for="a b c"></output>
+		</form>
+</body>
+</html>

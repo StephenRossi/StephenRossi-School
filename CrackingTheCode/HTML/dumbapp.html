@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="clock.png">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Macondo|Press+Start+2P" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>SO COOL!</title>
+</head>
+<style type="text/css">
+  html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+  #contain {
+    background-color: #3f5c91;
+    color: black;
+    text-align: center;
+    height: 12vh;
+    width: 60vw;
+    margin-left: 20vw;
+    font-size: 8vh;
+    margin-top: 15vh;
+    border-radius: 20px;
+    font-family: 'Press Start 2P', cursive;
+  }
+  #timer {
+    padding-top: 3vh;
+  }
+  body {
+    background-color: #3a5484;
+  .quote {
+    font-family: 'Macondo', cursive;  }
+
+  }
+
+</style>
+<body>
+  <div id="contain">
+    <p id="timer"></p>
+  </div>
+</body>
+<script type="text/javascript">
+    var now = new Date().getTime();
+    var countDownHour = now + (1000 * 60 * 60 + 1);
+    var distance = countDownHour - now;
+    
+
+var x = setInterval(function() {
+
+    var now = new Date().getTime();
+    
+    var distance = countDownHour - now;
+    
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s "; 
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "You just wasted an entire hour of your life.... congrats man.";
+    }
+}, 1000);
+</script>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Animations</title>
+	<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa:700|Bungee|Calligraffitti|Pacifico|Orbitron|Russo+One|Roboto+Slab" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html;">
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<style type="text/css">
+	h2 {
+		margin-left: 6em;
+	}
+
+	 				/* Basic color changing Animation: */
+	.basics {
+		margin-left: 12em;
+		height: 6em;
+		width: 6em;	  
+		background-color: black;	  		/*color after/without animation. Black will never show up in this case because the animation is on infinite and black never comes up*/
+		animation-name: basic;        		/* Name to connect your element, class, or id to an animation */
+		animation-duration: 2s;       		/* Duration of the animation*/ 
+		animation-iteration-count: 4;       /* How many times the "first" animation will be run" */
+																	/* Sidenote, in this case the 2 second animation will be repeated 4 times for an 8 second total duration*/
+	    /*animation-iteration-count: infinite;                       Here it would run infintely*/
+	    animation-direction: alternate;     /* Make the animation run forwards, backwards, or in alternate cycles*/
+	}
+	@keyframes basic { 						/* Attatching to Animation Name set above */
+		0%  {background-color: blue;}    	/* Set Color at 0% transition */
+		25% {background-color: orange;}
+		50% {background-color: green;}   	/* In this case the di would occur at 1s*/
+		75% {background-color: pink;}
+		100%  {background-color: purple;}
+	}
+				/*Basic Animation Movement*/
+	.basicMove {
+		text-align: center;
+		margin-left: 12em;
+		height: 6em;
+		width: 6em;
+		background-color: none;				/* Background color is unnecesary because we will be running the animation infinitely with colors set in the animation. */
+		animation-name: moving;
+		animation-delay: 1s;                /* Delay before Animation occurs */;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		position: relative;                 /* This is NECESSARY for a moving animation */
+	}
+	@keyframes moving {
+		0% {background-color: red; left: 0em; top: 0em;}            /* In a sort of grid format, use top and left as x and y coordinates. */
+		25% {background-color: yellow; left: 10em; top: 0em;}
+		50% {background-color: none ; left: 10em; top: 10em;}
+		75% {background-color: blue; left: 0em; top: 10em;}
+		100% {background-color: orange; left: 0em; top: 0em;}
+	}
+
+	#linear, #ease, #ease-in, #ease-out, #ease-in-out {
+		text-align: center;
+		margin-left: 12em;
+		margin-top: .5em;
+		height: 6em;
+		width: 6em;
+		background-color: blue;			
+		animation-delay: 0s;                /* Delay before Animation occurs */;
+		position: relative;                 /* This is NECESSARY for a moving animation */	
+		
+		/* animation-iteration-count: infinite;
+		animation-duration: 4s;	      				 	 These three lines of code can be shortened to the code 									
+		animation-name: moving; 								below it: */
+		animation: movingTwo 4s infinite; 	
+	}
+	@keyframes movingTwo {
+		from {left: 0px;}
+		to {left: 20em;}
+	}
+	#linear {animation-timing-function: linear; margin-top: 10em;}
+	#ease { animation-timing-function: ease;}
+	#ease-in { animation-timing-function: ease-in;}
+	#ease-out { animation-timing-function: ease-out;}
+	#ease-in-out { animation-timing-function: ease-in-out;}
+
+	.shortVersion {
+		text-align: center;
+		margin-left: 12em;
+		margin-top: 4em;
+		height: 6em;
+		width: 6em;
+		background-color: black;
+		color: white;
+		position: relative;
+		animation: short 5s infinite 0s linear alternate;				/* Now that you hopefully understand what each one controls we can combine them all with the animation property */ 
+				/* Name | duration | iteration count | delat | timing-func | direction    */
+	}
+	@keyframes short {
+		0% {background-color: red; left: 0em; top: 0em;}            /* In a sort of grid format, use top and left as x and y coordinates. */
+		25% {background-color: yellow; left: 10em; top: 0em;}
+		50% {background-color: purple 	; left: 10em; top: 10em;}
+		75% {background-color: blue; left: 0em; top: 10em;}
+		100% {background-color: orange; left: 0em; top: 0em;}
+	}
+	.next {
+		margin-top: 8em;
+	}
+
+	.boxOne {
+  		background: pink;
+  		border-radius: 5%;
+  		height: 6em;
+  		margin-left: 12em;
+  		text-align: center;
+  		transition-property: background, border-radius;
+  		transition-duration: .2s, .6s;
+  		transition-timing-function: linear, ease-in;
+  		transition-delay: 0s, .5s;
+  		width: 6em;
+	}
+	.boxOne:hover {
+		background: purple;
+    	border-radius: 50%;
+	}
+	.button {
+  		border: 0;
+  		margin-left:12em;
+  		margin-top: 1em;
+  		background: #0087cc;
+  		border-radius: 4px;
+  		box-shadow: 0 5px 0 #006599;
+  		color: #fff;
+  		cursor: pointer;
+  		font: inherit;
+  		outline: 0;
+  		padding: 12px 20px;
+  		transition: all .1s linear;
+  		height: 2em;
+  		width: 6em;
+	}
+	.button:active {
+	 	box-shadow: 0 2px 0 #006599;
+    	transform: translateY(3px);
+	}
+	.flip-container {
+ 		cursor: pointer;
+ 		height: 8em;
+		width: 8em;
+		margin-left: 12em;
+		margin-top: 2em;
+ 		perspective: 600;
+ 		position: relative;
+ 		color: orange;
+ 		text-align: center;
+ 		line-height: 8em;
+	}
+	.flip {
+		height: 100%;
+    	position: absolute;
+    	transform-style: preserve-3d;
+  		transition: all 1s ease-in-out;
+  		width: 100%;
+  		background-color: black;
+  		border-radius: .5em;
+	}
+	.flip:hover {
+ 		transform: rotateY(180deg);
+	}
+	.flip .side {
+  		backface-visibility: hidden;
+  		border-radius: .5em;
+  		height: 100%;
+  		position: absolute;
+  		overflow: hidden;
+  		width: 100%;
+	}
+	.flip .back {
+  		background: grey;
+  		color: orange;
+  		line-height: 8em;
+  		text-align: center;
+  		transform: rotateY(180deg);
+	}
+	.spinnerOne {
+		width: 5em;
+ 		height: 5em;
+    	background-color: #333;
+		margin: 2em auto;
+    	animation: spinnerOne 1.5s infinite ease-in-out;
+	}
+
+	@keyframes spinnerOne {
+	  0% { 
+	    transform: perspective(20em) rotateX(0deg) rotateY(0deg);
+	  } 50% { 
+	    transform: perspective(5em) rotateX(-180.1deg) rotateY(180deg);
+	  } 100% { 
+	    transform: perspective(5em) rotateX(-180deg) rotateY(-179.9deg);
+	  }
+	}
+	.loading {
+		width: 5em;
+		height: 5em;
+		background-color: red;
+		margin: 4em auto;
+		animation: loading 1s infinite linear;
+		border-radius: 1em;
+	}
+	@keyframes loading {
+		0% {
+			transform: perspective(20em) rotateX(0deg) rotateY(0deg);
+		}
+		25% {
+			transform: perspective(5em) rotateX(0deg) rotateY(0deg);
+		}
+		50% {
+			transform: perspective(5em) rotateX(90deg) rotateY(0deg);
+		}
+		75% {
+			transform: perspective(5em) rotateX(180deg) rotateY(0deg);
+		}
+		100%{
+			transform: perspective(20em) rotateX(360deg) rotateY(0deg);
+		}
+	}
+	.loadingTwo {
+		width: 6em;
+		height: 6em;
+		position: relative;
+		margin: 2em auto;
+	}
+	.loadingTwoPOne, .loadingTwoPTwo {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		opacity: .7;
+		top: 0em;
+		left: 0em;
+		background-color: blue;
+		animation: loadingTwo 2s infinite ease-in-out;
+		position: absolute;
+
+	}
+	.loadingTwoPTwo {
+		animation-delay: -1s;
+	}
+	@keyframes loadingTwo {
+		0% {
+			transform: scale(0.0);
+		}
+		50% {
+			transform: scale(1.0);
+		}
+		100% {
+			transform: scale(0.0);
+		}
+	}
+
+	.circleLoad > div{
+		width: 6em;
+		height: 6em;
+		position: relative;
+		margin: 2em auto;
+		display: inline-block;
+	}
+	.circleLoad {
+		margin-left: 39%;
+	}
+	.circleOne, .circleTwo, .circleThree {
+		height: 6em;
+		width: 6em;
+		border-radius: 50%;
+		position: absolute;
+		animation: circleLoad 1.5s infinite ease-in-out;
+		background-color: orange;
+		opacity: .9;
+	}
+	.circOne {
+		margin-left: 40%;
+		animation-delay: -.75s;
+	}
+	.circTwo {
+		margin-left: 50%;
+		animation-delay: -.5s;
+	}
+	.circThree {
+		margin-left: 60%;
+		animation-delay: -.25s;
+
+	}
+	@keyframes circleLoad {
+		0% {
+			transform: scale(.5);
+		}
+		50% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(.5);
+		}
+	}
+</style>
+<body>
+	<h1> CSS Animations: </h1>
+	<h2> Basics: </h2>
+	<div class="basics"> </div>
+	<h2> Moving Basics: </h2>
+	<div class="basicMove"></div>
+
+	<div class="moving" id="linear">"Linear" </div>
+	<div class="moving" id="ease">"Ease" </div>
+	<div class="moving" id="ease-in">"Ease-in" </div>
+	<div class="moving" id="ease-out">"Ease-out" </div>
+	<div class="moving" id="ease-in-out">"Ease-in-out" </div>
+
+	<div class="shortVersion"> </div>
+	<h2 class="next"> Some Transitions and Animaions </h2> 	
+	
+	<div class="boxOne"> </div>
+	<div class="button"> </div>
+	<div class="flip-container">
+  		<div class="flip">
+   			 <div class="side"> </div>
+   			<div class="side back">THERE!	 </div>
+  		</div>
+	</div>
+	<h2 class=> Loading Spinnies and such </h2>
+	<div class="spinnerOne"> </div>
+	<div class="loading"> </div>
+	<div class="loadingTwo">
+		<div class="loadingTwoPOne"> </div>
+		<div class="loadingTwoPTwo"> </div>
+	 </div>
+	 <div class="circleLoad">
+	 	<div class="circleOne  circOne"> </div>
+	 	<div class="circleTwo  circTwo"> </div>
+	 	<div class="circleThree  circThree"> </div>
+	 </div>
+	 </body>
+</body>
+</html>

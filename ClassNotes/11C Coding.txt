@@ -1,0 +1,158 @@
+coding
+	//Comapre 2 arrays
+	// return tre if arrays are the same
+
+	arr1={1234};
+	arr2={1234};
+	  arrayCompare(arr1,arr2);     // Want them to be the same
+	 
+	 	function arrayCompare(arr1,arr2){
+		var i=arr1.length;
+		var j=arr2.length;
+		if(i==j)returnfalse;
+		
+	returntrue;
+	}
+	
+	python anywhere
+			bash=linux
+				ls --help
+				ls -l      (ls -    signnifies details)
+				date   displays datef
+				
+				
+		ord("3")=51
+			51 is the character code of 3
+				it's the binary number that (in ascii) everyone agrees to use as that letter
+
+			
+	Code Examples:
+				
+>>> for i in range (45, 60):
+...  print(chr(i) + "==" +  str(i))                                                                                                              
+... 
+-==45
+.==46
+/==47
+0==48
+1==49
+2==50
+3==51
+4==52
+5==53
+6==54
+7==55
+8==56
+9==57
+:==58
+;==59
+>>> ord('A')
+65
+
+>>> s + str(i)
+'this3'
+>>> i
+3
+>>> chr(i)
+'\x03'
+				combined is called "concatenated"
+				
+				
+				
+		html: 
+			If the character does not have an HTML entity, you can use the decimal (dec) or hexadecimal (hex) reference
+				try:
+					<p>I will display &#9658;</p>
+			
+
+
+  2 class Meme:
+  3     dankMeter = 0
+  4     spiceMeter = 1 
+  5     name = ""
+  6                                                                                                                                           
+  7     def sparkTheImagination(self):
+  8         self.dankMeter = self.dankMeter + 1
+  9 
+ 10     def captivate(self):
+ 11         self.spiceMeter = self.spiceMeter * 10
+ 12 
+ 13     def ooze(self):
+ 14         self.dankMeter -= 3
+ 15         self.spiceMeter /= 5
+ 16 
+ 17     def display(self):
+ 18         print("Name: " + self.name)
+ 19         print("Spice: " + str(self.spiceMeter))
+ 20         print("Dank: " + str(self.dankMeter))
+ 21        
+ 22 
+ 23 
+ 
+ 
+ CAR, TRAIN, MOTERCYCLE, BOAT
+ 
+ Attributes:
+ 
+	VEHICLE
+		-> Type of vehicle
+		PASSENGERS
+			->NumberOfPeople
+			-> AmountOfLuggage
+			
+	class passengers {
+	
+	}
+	...
+	Class VEHICLE {
+		p = passengers()
+		}
+		
+		
+		
+	This is about pathagoris	
+		20 and 12 =  2 sides of integers of a triangle
+		2048
+		2068	
+		
+			  2    2     2
+			20 - 12  = 16
+			         2   2
+			if b * 16 = a
+			
+			
+		Either of them or neither could be the hypoteNOOSE
+		
+		JS
+		
+var moonPhase = 'full';
+var foggyNight = false;
+
+switch (moonPhase) {
+ case 'full':45[]
+    console.log('Howwwwlll!!');
+    break;
+ case 'mostly full':
+    console.log('Arms and legs are getting harrier');
+    break;
+ case 'mostly new':
+    console.log('Back on two feet');
+    break;
+  default:
+    console.log('Invalid moon phase');
+    break;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+<button onclick="setTimeout(myFunction, 3000)">Try it</button>    // waits 3 seconds to execute function
+
+	
+
+			
+	
+			

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;">
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<title> </title>
+</head>
+<style type="text/css">
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, section, summary,
+	time, mark, audio, video {
+  		margin: 0;
+  		padding: 0;
+  		border: 0;
+  		font: inherit;
+  		font-size: 100%;
+  		vertical-align: baseline;
+	}
+	#startButton {
+		height: 120px;
+		width: 210px;
+		 /* background: url("startButZero.png"); */
+		background-color: orange;
+		margin: 20% auto;
+	}
+	.figs {
+		background: url("fig.png");
+		background-size: cover;
+
+	}
+</style>
+	<body>
+		<button onclick="startGame()"> Start Game Here</button>
+	</body>
+<script>
+
+	var figCount = 0
+	var timer = 0
+	var start = false
+	var score = 0
+	var round = 0
+
+	function popFig() {
+
+	}
+	function addFigs() {
+		var newFig = document.createElement('div');
+		var t = document.createTextNode("I IZ A FIG");   
+		newFig.setAttribute("class", "figs");
+		newFig.appendChild(t); 
+		document.body.appendChild(newFig)
+		figCount++
+
+	}
+	function startGame() {
+    	addFigs();
+	}
+	function gameOver() {
+
+	}
+	function scoring() {
+
+	}
+	function startTimer() {
+
+	}
+	function stopTimer() {
+
+	}
+	//function loopStartButton() {
+	//	var images = ["startButZero.png","startButTwo.png","startButThree.png","startButFour.png","startButFive.png","startButSix.png","startButSeven.png","startButEight.png","startButNine.png"]
+	//	while(start == false) {
+	//		for i in images {
+	//			x = (x === images.length - 1) ? 0 : x + 1;
+    //            document.getElementById("bird").src = images[x];
+	//		}
+	//	}
+	//}
+</script>
+</html>
